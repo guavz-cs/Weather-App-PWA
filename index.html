@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2196F3">
+    <meta name="description" content="Live Weather Conditions - Check current weather and forecasts">
+    <meta name="theme-color" content="#2196F3">
+    <title>Weather App</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%232196F3' width='100' height='100'/><text y='.9em' font-size='90' fill='white'>☀</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="install-prompt" id="installPrompt">
+        <span>Install app for offline access</span>
+        <button class="install-btn" id="installBtn">Install</button>
+    </div>
+
+    <div class="header">
+        <h1>Weather App</h1>
+        <p>Live Weather Conditions</p>
+    </div>
+
+    <div class="search-container">
+        <input type="text" class="search-input" id="searchInput" placeholder="Search for a city...">
+         <button class="search-btn" id="searchBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+        </button>
+        <button class="location-btn" id="locationBtn" style="display: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 6-9 13-9 13s-9-7-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+        </button>
+
+
+    </div>
+
+    <div id="errorMsg" class="error" style="display: none;"></div>
+    <div id="loading" class="loading" style="display: none;">Loading...</div>
+
+    <div class="weather-list" id="weatherList"></div>
+
+    <div class="detail-view" id="detailView">
+        <div class="detail-header">
+            <button class="back-btn" id="backBtn">←</button>
+            <div class="detail-city" id="detailCity">London</div>
+            <div class="detail-temp-row">
+                <div class="detail-temp" id="detailTemp">15°C</div>
+                <div class="detail-desc-col">
+                    <div class="detail-desc" id="detailDesc">Partly Cloudy</div>
+                    <div class="detail-feels" id="detailFeels">Feels like 13°C</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-content">
+            <div class="detail-card">
+                <h3>Weather Details</h3>
+                <div class="metrics-grid">
+                    <div class="metric">
+                        <div class="metric-label">Humidity</div>
+                        <div class="metric-value" id="detailHumidity">--</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Wind Speed</div>
+                        <div class="metric-value" id="detailWind">--</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Pressure</div>
+                        <div class="metric-value" id="detailPressure">--</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Visibility</div>
+                        <div class="metric-value" id="detailVisibility">--</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Cloudiness</div>
+                        <div class="metric-value" id="detailClouds">--</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">UV Index</div>
+                        <div class="metric-value">N/A</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-card">
+                <h3>Sun Times</h3>
+                <div class="sun-times">
+                    <div class="sun-item">
+                        <div class="sun-label">Sunrise</div>
+                        <div class="sun-value" id="detailSunrise">--:--</div>
+                    </div>
+                    <div class="sun-item">
+                        <div class="sun-label">Sunset</div>
+                        <div class="sun-value" id="detailSunset">--:--</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="last-update" id="detailUpdate">Last updated: --</div>
+        </div>
+    </div>
+</body>
+</html>
