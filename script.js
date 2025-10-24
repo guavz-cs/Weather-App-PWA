@@ -232,7 +232,7 @@ function showError(message, isError = true) {
 
 function hideError() {
     document.getElementById('errorMsg').style.display = 'none';
-    document.getElementById('weatherList').style.marginTop = '18px'
+    document.getElementById('weatherList').style.marginTop = '180px'
 }
 
 // Event Listeners
