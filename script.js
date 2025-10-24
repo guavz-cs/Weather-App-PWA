@@ -227,10 +227,12 @@ function showError(message, isError = true) {
     errorEl.style.display = 'block';
     errorEl.style.background = isError ? '#ffebee' : '#e8f5e9';
     errorEl.style.color = isError ? '#c62828' : '#2e7d32';
+    document.getElementById('weatherList').style.marginTop = '230px'
 }
 
 function hideError() {
     document.getElementById('errorMsg').style.display = 'none';
+    document.getElementById('weatherList').style.marginTop = '18px'
 }
 
 // Event Listeners
