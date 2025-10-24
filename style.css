@@ -33,7 +33,7 @@ body {
 
 .search-container {
     position: fixed;
-    top: 100px;
+    top: 94px;
     left: 0;
     right: 0;
     background: #f5f7fa;
@@ -77,6 +77,7 @@ body {
 .weather-list {
     padding: 0 16px 16px;
     margin-top: 180px;
+    transition: margin-top 0.3s;
 }
 
 .weather-card {
