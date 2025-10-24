@@ -11,9 +11,14 @@ body {
 }
 
 .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     background: #2196F3;
     color: white;
     padding: 20px;
+    z-index: 100;
 }
 
 .header h1 {
@@ -27,9 +32,15 @@ body {
 }
 
 .search-container {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    right: 0;
+    background: #f5f7fa;
     padding: 16px;
     display: flex;
     gap: 8px;
+    z-index: 99;
 }
 
 .search-input {
@@ -65,6 +76,7 @@ body {
 
 .weather-list {
     padding: 0 16px 16px;
+    margin-top: 180px;
 }
 
 .weather-card {
@@ -308,6 +320,10 @@ body {
 }
 
 .error {
+    position: fixed;
+    z-index: 98;
+    left: 0;
+    right: 0;
     background: #ffebee;
     color: #c62828;
     padding: 12px;
