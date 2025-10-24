@@ -1,4 +1,3 @@
-const API_KEY = process.env.API_KEY; 
 const weatherList = [];
 let deferredPrompt;
 
@@ -49,29 +48,25 @@ document.getElementById('installBtn').addEventListener('click', async () => {
 
 
 async function getCurrentWeather(city) {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
-    const response = await fetch(url);
+    const response = await fetch(`/api/weather?city=${city}&type=current`);
     if (!response.ok) throw new Error('City not found');
     return response.json();
 }
 
 async function getCurrentWeatherByCoords(lat, lon) {
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
-    const response = await fetch(url);
+    const response = await fetch(`/api/weather?lat=${lat}&lon=${lon}&type=current`);
     if (!response.ok) throw new Error('Weather data not available');
     return response.json();
 }
 
 async function getForecast(city) {
-    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`;
-    const response = await fetch(url);
+    const response = await fetch(`/api/weather?city=${city}&type=forecast`);
     if (!response.ok) throw new Error('Forecast not available');
     return response.json();
 }
 
 async function getForecastByCoords(lat, lon) {
-    const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
-    const response = await fetch(url);
+    const response = await fetch(`/api/weather?lat=${lat}&lon=${lon}&type=forecast`);
     if (!response.ok) throw new Error('Forecast not available');
     return response.json();
 }
