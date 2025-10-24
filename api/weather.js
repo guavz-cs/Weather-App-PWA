@@ -1,6 +1,6 @@
 export default async function handler(req, res) {
   const { city, lat, lon, type } = req.query;
-  const apiKey = process.env._API_KEY;
+  const apiKey = process.env.API_KEY;
 
   let url;
 
