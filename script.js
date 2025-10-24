@@ -1,4 +1,4 @@
-const API_KEY = ProcessingInstruction.env.API_KEY; 
+const API_KEY = process.env.API_KEY; 
 const weatherList = [];
 let deferredPrompt;
 
